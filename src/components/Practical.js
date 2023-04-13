@@ -25,7 +25,7 @@ export class Practical extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="practical-info">
                 <form>
                     <label htmlFor="companyInput">Company: </label>
                     <input type="text" id="companyInput"></input>

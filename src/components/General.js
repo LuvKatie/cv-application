@@ -25,7 +25,7 @@ export class General extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='general-info'>
                 <form>
                     <label htmlFor="nameInput">Name: </label>
                     <input type="text" id="nameInput"></input>

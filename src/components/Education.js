@@ -25,7 +25,7 @@ export class Education extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="education-info">
                 <form>
                     <label htmlFor="schoolInput">School: </label>
                     <input type="text" id="schoolInput"></input>

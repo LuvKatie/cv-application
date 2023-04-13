@@ -1,0 +1,10 @@
+.cv-forms {
+    display: grid;
+    padding: 24px;
+}
+
+.general-info > form,
+.education-info > form,
+.practical-info > form{
+    display: grid;
+}
