@@ -28,10 +28,10 @@ export class Education extends React.Component {
             <div className="education-info">
                 <form>
                     <label htmlFor="schoolInput">School</label>
-                    <input type="text" id="schoolInput"></input>
+                    <input type="text" id="schoolInput" placeholder="Oregon State University"></input>
 
                     <label htmlFor="studyInput">Area of Study</label>
-                    <input type="text" id="studyInput"></input>
+                    <input type="text" id="studyInput" placeholder="Computer Science"></input>
 
                     <label htmlFor="dateInput">Start to End date</label>
                     <input type="date" id="dateInput"></input>
