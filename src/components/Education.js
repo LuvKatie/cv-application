@@ -27,13 +27,14 @@ export class Education extends React.Component {
         return (
             <div className="education-info">
                 <form>
-                    <label htmlFor="schoolInput">School: </label>
+                    <label htmlFor="schoolInput">School</label>
                     <input type="text" id="schoolInput"></input>
 
-                    <label htmlFor="studyInput">Area of Study: </label>
+                    <label htmlFor="studyInput">Area of Study</label>
                     <input type="text" id="studyInput"></input>
 
-                    <label htmlFor="dateInput">Start to End date: </label>
+                    <label htmlFor="dateInput">Start to End date</label>
+                    <input type="date" id="dateInput"></input>
                     <input type="date" id="dateInput"></input>
                 </form>
             </div>

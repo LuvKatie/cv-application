@@ -27,13 +27,13 @@ export class Practical extends React.Component {
         return (
             <div className="practical-info">
                 <form>
-                    <label htmlFor="companyInput">Company: </label>
+                    <label htmlFor="companyInput">Company</label>
                     <input type="text" id="companyInput"></input>
                     
-                    <label htmlFor="positionInput">Poisition Title: </label>
+                    <label htmlFor="positionInput">Poisition Title</label>
                     <input type="text" id="positionInput"></input>
 
-                    <label htmlFor="positionInput">Main Tasks: </label>
+                    <label htmlFor="positionInput">Main Tasks</label>
                     <input type="textarea" id="positionInput"></input>
                 </form>
             </div>

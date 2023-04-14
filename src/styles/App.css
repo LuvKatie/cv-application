@@ -1,3 +1,9 @@
+:root {
+    --cerulean: #3A7CA5;
+    --platnium: #D9DCD6;
+    font-family: 'Merriweather', serif;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
