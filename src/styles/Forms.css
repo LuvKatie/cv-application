@@ -2,28 +2,29 @@
     display: grid;
     grid-column: 2 / 3;
     padding: 24px;
-    background-color: var(--cerulean)
+    background-color: var(--cambridge);
+    border-radius: 32px 0px 0px 32px;
 }
 
-input[type="date"] {
+.cv-forms input[type="date"] {
     margin-bottom: 12px;
 }
 
-input:focus,
-textarea:focus {
+.cv-forms input:focus,
+.cv-forms textarea:focus {
     outline: none;
 }
 
-input, 
-textarea {
+.cv-forms input, 
+.cv-forms textarea {
     border-radius: 12px;
-    border: 1px solid lightgrey;
+    border: 1px solid var(--mint);
     padding: 6px;
-    font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
+    color: var(--castleton)
 }
 
-textarea {
+.cv-forms textarea {
     resize: none;
 }
 
@@ -35,13 +36,13 @@ textarea {
 
 .cv-forms label {
     font-weight: 600;
-    color: var(--platnium);
+    color: var(--mint);
     text-align: center;
     margin: 10px 0px;
 }
 
-.general-info,
+/* .general-info,
 .education-info,
 .practical-info {
-    display: flex;
-}
+    
+} */

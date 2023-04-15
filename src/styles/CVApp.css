@@ -1,5 +1,32 @@
 .cv-application {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     min-height: inherit;
     width: 100%;
-    background-color: var(--indigo)
+
+    background-color: var(--castleton);
+    border-radius: 0px 32px 32px 0px;
+}
+
+.cv-container {
+    display: grid;
+    grid-template: 1fr 0.1fr 2fr 0.1fr 3fr 3fr / 1fr;
+    min-height: 88%;
+    width: min(80%, 700px);
+    border-radius: 60px;
+    padding: 24px;
+    background-color: var(--powder);
+}
+
+#cv-general {
+    display: grid;
+}
+
+hr {
+    width: 100%;
+    height: 0%;
+    margin: 20px 0px;
+    border-bottom: 1px solid var(--powder);
 }

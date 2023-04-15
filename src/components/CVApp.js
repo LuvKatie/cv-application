@@ -8,7 +8,27 @@ export class CVApp extends React.Component {
     render() {
         return (
             <div className="cv-container">
-                <form>
+                <form id="cv-general">
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                </form>
+
+                <hr></hr>
+                <form id="cv-education">
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                </form>
+
+                <hr></hr>
+                <form id="cv-company">
+
+                </form>
+
+                <hr></hr>
+                <form id="cv-skills">
 
                 </form>
             </div>

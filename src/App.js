@@ -1,9 +1,11 @@
 import React from 'react';
 import './styles/App.css'
 import './styles/Forms.css'
+import './styles/CVApp.css'
 import { General } from './components/General';
 import { Education } from './components/Education';
 import { Practical } from './components/Practical';
+import { CVApp } from './components/CVApp';
 
 class App extends React.Component {
     render() {
@@ -16,7 +18,7 @@ class App extends React.Component {
                 </div>
 
                 <div className='cv-application'>
-
+                <CVApp />
                 </div>
             </div>
             

@@ -33,8 +33,8 @@ export class Practical extends React.Component {
                     <label htmlFor="positionInput">Poisition Title</label>
                     <input type="text" id="positionInput" placeholder="Senior Software Engineer"></input>
 
-                    <label htmlFor="positionInput">Main Tasks</label>
-                    <textarea id="positionInput" rows={4} cols={40} maxLength={320} placeholder="320 characters max"/>
+                    <label htmlFor="positionInput">Main Tasks / Skills</label>
+                    <textarea id="positionInput" rows={4} cols={40} maxLength={320} placeholder={`320 characters max \nEx. HTML, CSS, Javascript, React`}/>
                 </form>
             </div>
         )
