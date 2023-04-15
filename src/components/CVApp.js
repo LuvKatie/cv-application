@@ -9,9 +9,9 @@ export class CVApp extends React.Component {
         return (
             <div className="cv-container">
                 <form id="cv-general">
-                    <input></input>
-                    <input></input>
-                    <input></input>
+                    <input type="text" value="John Doe" id="cv-name"></input>
+                    <input type="email" value="johndoe@gmail.com" id="cv-email"></input>
+                    <input type="tel" value="000-000-0000" id="cv-phone"></input>
                 </form>
 
                 <hr></hr>
