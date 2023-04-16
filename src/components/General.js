@@ -3,12 +3,6 @@ import React from "react";
 export class General extends React.Component {
     constructor(props) {
         super(props);
-
-        this.readProps = this.readProps.bind(this)
-    }
-
-    readProps() {
-        console.log(this.props)
     }
 
     render() {
@@ -24,8 +18,6 @@ export class General extends React.Component {
                     <label htmlFor="phoneInput">Phone #</label>
                     <input type="tel" id="phoneInput" placeholder="000-000-0000"></input>
                 </form>
-
-                <button onClick={this.readProps}></button>
             </div>
             
         )

@@ -17,11 +17,12 @@
 
 .cv-forms input, 
 .cv-forms textarea {
+    box-sizing: border-box;
     border-radius: 12px;
     border: 1px solid var(--mint);
     padding: 6px;
     font-size: 15px;
-    color: var(--castleton)
+    color: var(--castleton);
 }
 
 .cv-forms textarea {
@@ -40,9 +41,3 @@
     text-align: center;
     margin: 10px 0px;
 }
-
-/* .general-info,
-.education-info,
-.practical-info {
-    
-} */
