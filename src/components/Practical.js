@@ -3,23 +3,6 @@ import React from "react";
 export class Practical extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            company: {
-                text: '',
-                id: ''
-            },
-
-            position: {
-                text: '',
-                id: ''
-            },
-
-            skills: {
-                text: '',
-                id: ''
-            }
-        }
     }
 
 
