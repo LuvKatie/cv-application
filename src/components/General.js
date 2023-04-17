@@ -1,12 +1,21 @@
 import React from "react";
 
 export class General extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.props.onChange(e.target.value);
+    }
+
     render() {
         return (
             <div className='general-info'>
                 <form>
                     <label htmlFor="nameInput">Name</label>
-                    <input type="text" id="nameInput" placeholder="John Doe"></input>
+                    <input type="text" id="nameInput" placeholder="John Doe" onChange={this.handleChange}></input>
 
                     <label htmlFor="emailInput">Email</label>
                     <input type="email" id="emailInput" placeholder="johndoe@gmail.com"></input>

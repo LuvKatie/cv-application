@@ -64,16 +64,27 @@ class App extends React.Component {
                 }
             },
         }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
+
+    handleInputChange = (value) => {
+        this.setState({
+            general: {
+                name: value,
+            }
+        }, () => {console.log(this.state.general)})
+    }
+
     render() {
-        const {name, email, phone} = this.state.general;
-        const {school, study, date} = this.state.education;
-        const {company, position, skills} = this.state.practical;
+        // const {name, email, phone} = this.state.general;
+        // const {school, study, date} = this.state.education;
+        // const {company, position, skills} = this.state.practical;
 
         return (
             <div className='main'>
                 <div className='cv-forms'>
-                <General />
+                <General onChange={this.handleInputChange}/>
                 <Education />
                 <Practical />
                 <button id='submit-cv'>Submit</button>
