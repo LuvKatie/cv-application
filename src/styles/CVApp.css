@@ -20,12 +20,13 @@
     background-color: var(--powder);
 }
 
-.cv-container input {
+.cv-container input:disabled {
     border: none;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 12px;
     margin: 2px 0px;
+    background-color: white;
     /* outline: 1px dashed black; */
 }
 
@@ -108,6 +109,10 @@ input#cv-study {
 
     resize: none;
     overflow: hidden;
+}
+
+textarea:disabled {
+    background-color: white;
 }
 
 hr {

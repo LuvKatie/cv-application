@@ -1,11 +1,6 @@
 import React from "react";
 
 export class Practical extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
         return (
             <div className="practical-info">

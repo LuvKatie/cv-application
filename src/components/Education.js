@@ -1,10 +1,6 @@
 import React from "react";
 
 export class Education extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="education-info">

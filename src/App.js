@@ -73,9 +73,11 @@ class App extends React.Component {
         return (
             <div className='main'>
                 <div className='cv-forms'>
-                <General name={name} email={email} phone={phone}/>
-                <Education school={school} study={study} date={date}/>
-                <Practical company={company} position={position} skills={skills}/>
+                <General />
+                <Education />
+                <Practical />
+                <button id='submit-cv'>Submit</button>
+                <button id='edit-cv'>Edit</button>
                 </div>
 
                 <div className='cv-application'>
