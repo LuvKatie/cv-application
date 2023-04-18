@@ -85,6 +85,7 @@ class App extends React.Component {
 
     handleInputChange = (value, id) => {
         this.InfoObj[id] = value;
+        this.handleState('edit');
     }
     
     handleSubmit = () => {
@@ -167,7 +168,7 @@ class App extends React.Component {
                     [prevMode]: '',
                 }
             },
-        }, () => console.log(this.state))
+        })
     }
     
     render() {
