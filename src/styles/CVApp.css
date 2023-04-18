@@ -26,7 +26,7 @@
     padding-bottom: 0px;
     padding-left: 12px;
     margin: 2px 0px;
-    background-color: white;
+    background-color: var(--powder);
     /* outline: 1px dashed black; */
 }
 

@@ -101,16 +101,24 @@ class App extends React.Component {
             school, study, start, end,
             company, position, skills} = this.InfoObj;
             
-        let currMode, prevMode;
+        let currMode, prevMode, currStart, currEnd, prevStart, prevEnd;
 
         switch(action) {
             case 'submit': 
                 currMode = 'text';
                 prevMode = 'edit';
+                prevStart = 'editStart';
+                prevEnd = 'editEnd';
+                currStart = 'start';
+                currEnd = 'end';
                 break;
             case 'edit':
                 currMode = 'edit';
                 prevMode = 'text';
+                currStart = 'editStart';
+                currEnd = 'editEnd';
+                prevStart = 'start';
+                prevEnd = 'end';
                 break;
             default:
                 break;
@@ -146,10 +154,10 @@ class App extends React.Component {
                 },
     
                 date: {
-                    start: start,
-                    end: end,
-                    editStart: '',
-                    editEnd: '',
+                    [currStart]: start,
+                    [currEnd]: end,
+                    [prevStart]: '',
+                    [prevEnd]: '',
                 }
             },
             practical: {

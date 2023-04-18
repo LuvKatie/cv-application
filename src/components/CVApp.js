@@ -9,7 +9,7 @@ export class CVApp extends React.Component {
 
     getProps(category, section) {
         if (section === 'start' || section === 'end') {
-            return this.props[category][section]
+            return this.props[category].date[section]
         }
         return this.props[category][section].text
     }
