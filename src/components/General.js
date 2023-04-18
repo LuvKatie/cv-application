@@ -20,11 +20,11 @@ export class General extends React.Component {
 
                     <label htmlFor="emailInput">Email</label>
                     <input type="email" id="emailInput" data-id="email" 
-                    placeholder="johndoe@gmail.com" defaultValue={this.props.general.email.edit} onChange={this.handleChange}></input>
+                    placeholder="johndoe@gmail.com" value={this.props.general.email.edit} onChange={this.handleChange}></input>
 
                     <label htmlFor="phoneInput">Phone #</label>
                     <input type="tel" id="phoneInput" data-id="phone" 
-                    placeholder="000-000-0000" defaultValue={this.props.general.phone.edit} onChange={this.handleChange}></input>
+                    placeholder="000-000-0000" value={this.props.general.phone.edit} onChange={this.handleChange}></input>
                 </form>
             </div>
             
