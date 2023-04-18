@@ -6,11 +6,22 @@ import { General } from './components/General';
 import { Education } from './components/Education';
 import { Practical } from './components/Practical';
 import { CVApp } from './components/CVApp';
-import { render } from '@testing-library/react';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.InfoObj = {
+            name: '',
+            email: '',
+            phone: '',
+            school: '',
+            study: '',
+            start: '',
+            end: '',
+            company: '',
+            position: '',
+            skills: '',
+        }
 
         this.state = {
             general: {
@@ -70,39 +81,98 @@ class App extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange = (value) => {
+    handleInputChange = (value, id) => {
+        this.InfoObj[id] = value;
+    }
+    
+    handleSubmit = () => {
+        const {name, email, phone,
+        school, study, start, end,
+        company, position, skills} = this.InfoObj;
+
+        
         this.setState({
             general: {
                 name: {
-                    text: value,
+                    text: name,
+                    id: ''
+                },
+                
+                email: {
+                    text: email,
+                    id: ''
+                },
+                
+                phone: {
+                    text: phone,
                     id: ''
                 }
-            }
-        }, () => {console.log(this.state.general.name)})
+            },
+            
+            education: {
+                school: {
+                    text: school,
+                    id: ''
+                },
+                
+                study: {
+                    text: study,
+                    id: ''
+                },
+    
+                date: {
+                    start: start,
+                    end: end,
+                    id: ''
+                }
+            },
+            
+            practical: {
+                company: {
+                    text: company,
+                    id: ''
+                },
+                
+                position: {
+                    text: position,
+                    id: ''
+                },
+                
+                skills: {
+                    text: skills,
+                    id: ''
+                }
+            },
+        })
     }
-
-    handleSubmit = () => {
-
-    }
-
+    
     render() {
-        const {name} = this.state.general;
-        // const {name, email, phone} = this.state.general;
-        // const {school, study, date} = this.state.education;
-        // const {company, position, skills} = this.state.practical;
+        const {name, email, phone} = this.state.general;
+        const {school, study, date} = this.state.education;
+        const {company, position, skills} = this.state.practical;
 
+        const general = {name, email, phone};
+        const education = {school, study, date}
+        const practical = {company, position, skills}
+        
         return (
             <div className='main'>
                 <div className='cv-forms'>
+
+                {/* Add props for General, Education, and Practical forms
+                so that when we update our state when we press edit
+                it will inject the edit values into our forms for us
+                to resubmit */}
+
                 <General onChange={this.handleInputChange}/>
-                <Education />
-                <Practical />
+                <Education onChange={this.handleInputChange}/>
+                <Practical onChange={this.handleInputChange}/>
                 <button id='submit-cv' onClick={this.handleSubmit}>Submit</button>
                 <button id='edit-cv'>Edit</button>
                 </div>
 
                 <div className='cv-application'>
-                <CVApp name={name.text}/>
+                <CVApp general={general} education={education} practical={practical}/>
                 </div>
             </div>
             
