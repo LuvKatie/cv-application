@@ -16,18 +16,18 @@ export class Practical extends React.Component {
                 <form>
                     <label htmlFor="companyInput">Company</label>
                     <input type="text" id="companyInput" data-id="company" 
-                    placeholder="Google | Amazon | Microsoft" 
+                    placeholder="Google | Amazon | Microsoft" defaultValue={this.props.practical.company.edit}
                     onChange={this.handleChange}></input>
                     
                     <label htmlFor="positionInput">Poisition Title</label>
                     <input type="text" id="positionInput" data-id="position" 
-                    placeholder="Senior Software Engineer" 
+                    placeholder="Senior Software Engineer" defaultValue={this.props.practical.position.edit}
                     onChange={this.handleChange}></input>
 
                     <label htmlFor="positionInput">Main Tasks / Skills</label>
                     <textarea id="positionInput" data-id="skills" 
                     rows={4} cols={40} maxLength={320} 
-                    placeholder={`320 characters max \nEx. HTML, CSS, Javascript, React`} 
+                    placeholder={`320 characters max \nEx. HTML, CSS, Javascript, React`} defaultValue={this.props.practical.skills.edit}
                     onChange={this.handleChange}/>
                 </form>
             </div>

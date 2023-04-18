@@ -6,7 +6,7 @@ export class General extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.props.onChange(e.target.value, e.target.dataset.id);
     }
 
@@ -16,15 +16,15 @@ export class General extends React.Component {
                 <form>
                     <label htmlFor="nameInput">Name</label>
                     <input type="text" id="nameInput" data-id="name" 
-                    placeholder="John Doe" onChange={this.handleChange}></input>
+                    placeholder="John Doe" value={this.props.general.name.edit} onChange={this.handleChange}></input>
 
                     <label htmlFor="emailInput">Email</label>
                     <input type="email" id="emailInput" data-id="email" 
-                    placeholder="johndoe@gmail.com" onChange={this.handleChange}></input>
+                    placeholder="johndoe@gmail.com" defaultValue={this.props.general.email.edit} onChange={this.handleChange}></input>
 
                     <label htmlFor="phoneInput">Phone #</label>
                     <input type="tel" id="phoneInput" data-id="phone" 
-                    placeholder="000-000-0000" onChange={this.handleChange}></input>
+                    placeholder="000-000-0000" defaultValue={this.props.general.phone.edit} onChange={this.handleChange}></input>
                 </form>
             </div>
             

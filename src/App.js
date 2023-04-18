@@ -27,58 +27,60 @@ class App extends React.Component {
             general: {
                 name: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
     
                 email: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
     
                 phone: {
                     text: '',
-                    id: ''
+                    edit: '',
                 }
             },
 
             education: {
                 school: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
     
                 study: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
     
                 date: {
                     start: '',
                     end: '',
-                    id: ''
+                    edit: '',
                 }
             },
 
             practical: {
                 company: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
 
                 position: {
                     text: '',
-                    id: ''
+                    edit: '',
                 },
 
                 skills: {
                     text: '',
-                    id: ''
+                    edit: '',
                 }
             },
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleState = this.handleState.bind(this);
     }
 
     handleInputChange = (value, id) => {
@@ -86,64 +88,86 @@ class App extends React.Component {
     }
     
     handleSubmit = () => {
-        const {name, email, phone,
-        school, study, start, end,
-        company, position, skills} = this.InfoObj;
+        this.handleState('submit');
+    }
 
-        
+    handleEdit = () => {
+        this.handleState('edit');
+    }
+
+    handleState = (action) => {
+        const {name, email, phone,
+            school, study, start, end,
+            company, position, skills} = this.InfoObj;
+            
+        let currMode, prevMode;
+
+        switch(action) {
+            case 'submit': 
+                currMode = 'text';
+                prevMode = 'edit';
+                break;
+            case 'edit':
+                currMode = 'edit';
+                prevMode = 'text';
+                break;
+            default:
+                break;
+        }
+
+
         this.setState({
             general: {
                 name: {
-                    text: name,
-                    id: ''
+                    [currMode]: name,
+                    [prevMode]: '',
                 },
                 
                 email: {
-                    text: email,
-                    id: ''
+                    [currMode]: email,
+                    [prevMode]: '',
                 },
                 
                 phone: {
-                    text: phone,
-                    id: ''
+                    [currMode]: phone,
+                    [prevMode]: '',
                 }
             },
-            
             education: {
                 school: {
-                    text: school,
-                    id: ''
+                    [currMode]: school,
+                    [prevMode]: '',
                 },
                 
                 study: {
-                    text: study,
-                    id: ''
+                    [currMode]: study,
+                    [prevMode]: '',
                 },
     
                 date: {
                     start: start,
                     end: end,
-                    id: ''
+                    editStart: '',
+                    editEnd: '',
                 }
             },
-            
             practical: {
                 company: {
-                    text: company,
-                    id: ''
+                    [currMode]: company,
+                    [prevMode]: '',
                 },
                 
                 position: {
-                    text: position,
-                    id: ''
+                    [currMode]: position,
+                    [prevMode]: '',
                 },
                 
                 skills: {
-                    text: skills,
-                    id: ''
+                    [currMode]: skills,
+                    [prevMode]: '',
                 }
             },
-        })
+        }, () => console.log(this.state))
     }
     
     render() {
@@ -158,17 +182,11 @@ class App extends React.Component {
         return (
             <div className='main'>
                 <div className='cv-forms'>
-
-                {/* Add props for General, Education, and Practical forms
-                so that when we update our state when we press edit
-                it will inject the edit values into our forms for us
-                to resubmit */}
-
-                <General onChange={this.handleInputChange}/>
-                <Education onChange={this.handleInputChange}/>
-                <Practical onChange={this.handleInputChange}/>
+                <General onChange={this.handleInputChange} general={general}/>
+                <Education onChange={this.handleInputChange} education={education}/>
+                <Practical onChange={this.handleInputChange} practical={practical}/>
                 <button id='submit-cv' onClick={this.handleSubmit}>Submit</button>
-                <button id='edit-cv'>Edit</button>
+                <button id='edit-cv' onClick={this.handleEdit}>Edit</button>
                 </div>
 
                 <div className='cv-application'>
